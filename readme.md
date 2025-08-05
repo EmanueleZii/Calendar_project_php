@@ -9,15 +9,11 @@ Un'applicazione web di calendario creata con **PHP**, **MySQL**, **HTML**, **CSS
 - **HTML5/CSS3** – Struttura e stile della UI
 - **JavaScript (Vanilla)** – Gestione del calendario e interazioni dinamiche
 
-## 📸 Screenshot
-
-![screenshot](screenshot.png) <!-- Metti uno screenshot del calendario -->
-
 ## 🚀 Funzionalità
 
 - Visualizzazione mensile del calendario
 - Aggiunta eventi con titolo, data e ora
-- Eliminazione eventi
+- Eliminazione appuntamenti
 - Eventi evidenziati nel calendario
 - Interfaccia responsive (mobile-friendly)
 
@@ -25,9 +21,8 @@ Un'applicazione web di calendario creata con **PHP**, **MySQL**, **HTML**, **CSS
 project-root/
 │
 ├── index.php # Homepage con il calendario
-├── add_event.php # API per inserire eventi
-├── delete_event.php # API per cancellare eventi
-├── db.php # Connessione al database MySQL
+├── connection.php # Connessione al database MySQL
+├── calendar.php # Connessione al database MySQL
 ├── style.css # Stili dell'interfaccia
 ├── script.js # Logica client-side del calendario
 ├── schema.sql # Script per creare il database
