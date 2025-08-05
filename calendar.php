@@ -33,8 +33,43 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST['action'] ?? '') == "add" )
     exit;
 }
 
-# gestisci la modifica dei appuntamenti
+# gestione la modifica dei appuntamenti
+
+if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST['action'] ?? '') === 'edit')
+{
+    $id = $_POST['event_id'] ?? null;
+    $course = trim($_POST["course_name"] ?? '');
+    $instructor =trim($_POST['instructor_name'] ?? '');
+    $start = $_POST['start_date'] ?? '';
+    $end = $_POST['end_date'] ?? '';
+
+   if( $course &&  $instructor &&$start && $end )
+    {
+        $stmt = $conn->prepare(
+            "UPDATE appointments 
+             SET course_name = ?, instructor_name = ?, start_date= ?, end_date=?"
+            );
+        
+        $stmt->bind_param("ssss",$course, $instructor, $start, $end);
+        
+        $stmt->execute();
+    
+        $stmt->close();
+        
+        header("Location: " . $_SERVER["PHP_SELF"] . "?success");
+
+        exit;
+    }else{
+        header("Location: " . $_SERVER["PHP_SELF"] . "?error=2");
+        exit;
+    }
+}
 
 
+#Gestione eliminazione Appuntamenti
+if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST['action'] ?? '') === 'delete')
+{
+
+}
 
 ?>
