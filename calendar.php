@@ -25,7 +25,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST['action'] ?? '') == "add" )
     
     $stmt->close();
 
-    header("Location: " . $_SERVER["PHP_SELF"] . "?success");
+    header("Location: " . $_SERVER["PHP_SELF"] . "?success=1");
 
     exit;
 }else{
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST['action'] ?? '') === 'edit'
     
         $stmt->close();
         
-        header("Location: " . $_SERVER["PHP_SELF"] . "?success");
+        header("Location: " . $_SERVER["PHP_SELF"] . "?success=2");
 
         exit;
     }else{
@@ -69,7 +69,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST['action'] ?? '') === 'edit'
 #Gestione eliminazione Appuntamenti
 if ($_SERVER["REQUEST_METHOD"] === "POST" && ($_POST['action'] ?? '') === 'delete')
 {
+    $id = $_POST['event_id'] ?? null;
+    if ($id){
+        $stmt = $conn->prepare(
+            "DELETE  FROM appointments WHERE id = ?"
+            );
+        
+        $stmt->bind_param("i",$id);
+            
+        $stmt->execute();
+        
+        $stmt->close();
+            
+        header("Location: " . $_SERVER["PHP_SELF"] . "?success=3");
 
+        exit;
+    }
+   
 }
 
+##Success And Error Messagge
+if (isset()){
+    
+}
 ?>
