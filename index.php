@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar Php</title>
     <meta name="description" content="calendario realizzato in php vanilla nessun framework">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Calendar Php</title> 
 </head>
 <body>
 
@@ -87,7 +87,7 @@
             <button type="button" onclick="" class="submit-btn">❌ Cancella </button>
         </div>
     </div>
-    
+
     <script src="calendar.js">
 
     </script>
