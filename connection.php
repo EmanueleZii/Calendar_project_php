@@ -9,7 +9,7 @@ $db= "calendar";
 
 $conn = new  mysqli($host, $user, $pass, $db);
 
-$conn->set_charset("utf")
+$conn->set_charset("utf8mb4")
 
 
 
