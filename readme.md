@@ -17,17 +17,6 @@ Un'applicazione web di calendario creata con **PHP**, **MySQL**, **HTML**, **CSS
 - Eventi evidenziati nel calendario
 - Interfaccia responsive (mobile-friendly)
 
-## 🗃️ Struttura del progetto
-project-root/
-│
-├── index.php # Homepage con il calendario
-├── connection.php # Connessione al database MySQL
-├── calendar.php # Connessione al database MySQL
-├── style.css # Stili dell'interfaccia
-├── script.js # Logica client-side del calendario
-├── schema.sql # Script per creare il database
-└── README.md
-
 ## 🛠️ Installazione
 
 1. **Clona il progetto**
