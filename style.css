@@ -17,5 +17,36 @@
 
 body{
     font-family: "Inter", sans-serif;
+    background-color: var(--background);
+    color: #333;
+    line-height: 1.6;
 }
+
+header{
+    background-color: var(--primary);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/* Clock */
+.clock-container{
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    letter-spacing: 2px;
+    border-bottom: 2px solid var(--primary);
+}
+
+@media (max-width: 768px){
+    .clock-container{
+        font-size: 1.4rem;
+        padding: 0.75rem;
+    }
+}
+
 
